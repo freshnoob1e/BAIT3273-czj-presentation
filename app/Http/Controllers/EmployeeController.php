@@ -107,7 +107,7 @@ class EmployeeController extends Controller
     }
 
     public function create(){
-        $departments = Http::get(env('LOGIC_APPLICATION_URL').'/departments')['departments'];
+        $departments = Http::get(env('LOGIC_APPLICATION_URL').'departments')['departments'];
         $initialJobs = $departments[0]['jobs'];
 
         return Inertia::render('Employee/Create', [
